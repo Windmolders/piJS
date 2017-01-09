@@ -1,4 +1,4 @@
-var Gopigo = require('./modules/node-gopigo');
+var Gopigo = require('../node-gopigo');
 var Commands = Gopigo.commands;
 var Robot = Gopigo.robot;
 
@@ -6,7 +6,7 @@ class piJS
 {
   /**
    * Constructor function. Gets called when class is made into a object
-   * @param {json} cfg
+   * @param {Object} cfg
    */
   constructor(cfg) {
 
