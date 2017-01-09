@@ -6,8 +6,6 @@
  */
 var fs      = require('fs');
 var _ = require('lodash');
-var readline = require('readline');
-
 
 
 /**

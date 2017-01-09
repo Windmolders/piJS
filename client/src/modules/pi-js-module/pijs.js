@@ -1,6 +1,7 @@
 var Gopigo = require('../node-gopigo');
 var Commands = Gopigo.commands;
 var Robot = Gopigo.robot;
+var readline = require('readline');
 
 var rl = readline.createInterface({
   input : process.stdin,
