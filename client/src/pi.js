@@ -35,13 +35,13 @@ io.on('connection', function(socket) {
   });
 
   socket.on('left', function() {
-    pi.handleAnswer('move left');
+    pi.handleAnswer('turn left');
     socket.emit('left');
     console.info('left');
   });
 
   socket.on('right', function() {
-    pi.handleAnswer('move right');
+    pi.handleAnswer('turn right');
     socket.emit('right');
     console.info('right');
   });
