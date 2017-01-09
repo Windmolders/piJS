@@ -24,31 +24,31 @@ class piJS
   }
 
   listenEvents() {
-    robot.on('init', (res) => {
+    this._roboton('init', (res) => {
       this.onInit(res);
     });
-    robot.on('error', (err) => {
+    this._roboton('error', (err) => {
       this.onError(err);
     });
-    robot.on('free', () => {
+    this._roboton('free', () => {
       this.onFree();
     });
-    robot.on('halt', () => {
+    this._roboton('halt', () => {
       this.onHalt();
     });
-    robot.on('close',() => {
+    this._roboton('close',() => {
       this.onClose();
     });
-    robot.on('reset', () => {
+    this._roboton('reset', () => {
       this.onReset();
     });
-    robot.on('normalVoltage', (voltage) => {
+    this._roboton('normalVoltage', (voltage) => {
       this.onNormalVoltage(voltage);
     });
-    robot.on('lowVoltage', (voltage) => {
+    this._roboton('lowVoltage', (voltage) => {
       this.onLowVoltage(voltage);
     });
-    robot.on('criticalVoltage', (voltage) => {
+    this._roboton('criticalVoltage', (voltage) => {
       this.onCriticalVoltage(voltage);
     })
   }
@@ -105,139 +105,134 @@ class piJS
         console.log('')
         break
       case 'reset':
-        robot.reset()
+        this._robotreset()
         break
       case 'left led on':
-        var res = robot.ledLeft.on()
+        var res = this._robotledLeft.on()
         console.log('Left led on::'+res)
         break
       case 'left led off':
-        var res = robot.ledLeft.off()
+        var res = this._robotledLeft.off()
         console.log('Left led off::'+res)
-        break
+        break;
       case 'right led on':
-        var res = robot.ledRight.on()
+        var res = this._robotledRight.on()
         console.log('Right led on::'+res)
-        break
+        break;
       case 'right led off':
-        var res = robot.ledRight.off()
+        var res = this._robotledRight.off()
         console.log('Right led off::'+res)
         break
       case 'move forward':
       case 'w':
-        var res = robot.motion.forward(false)
+        var res = this._robotmotion.forward(false)
         console.log('Moving forward::' + res)
-        break
+        break;
       case 'turn left':
       case 'a':
-        var res = robot.motion.left()
+        var res = this._robotmotion.left()
         console.log('Turning left::' + res)
-        break
+        break;
       case 'turn right':
       case 'd':
-        var res = robot.motion.right()
+        var res = this._robotmotion.right()
         console.log('Turning right::' + res)
-        break
+        break;
       case 'move backward':
       case 's':
-        var res = robot.motion.backward(false)
+        var res = this._robotmotion.backward(false)
         console.log('Moving backward::' + res)
-        break
+        break;
       case 'stop':
       case 'x':
-        var res = robot.motion.stop()
+        var res = this._robotmotion.stop()
         console.log('Stop::' + res)
         break
       case 'increase speed':
       case 't':
-        var res = robot.motion.increaseSpeed()
-        console.log('Increasing speed::' + res)
-        break
+        var res = this._robotmotion.increaseSpeed();
+        console.log('Increasing speed::' + res);
+        break;
       case 'decrease speed':
       case 'g':
-        var res = robot.motion.decreaseSpeed()
-        console.log('Decreasing speed::' + res)
-        break
+        var res = this._robotmotion.decreaseSpeed();
+        console.log('Decreasing speed::' + res);
+        break;
       case 'voltage':
       case 'v':
-        var res = robot.board.getVoltage()
-        console.log('Voltage::' + res + ' V')
-        break
+        var res = this._robotboard.getVoltage();
+        console.log('Voltage::' + res + ' V');
+        break;
       case 'servo test':
       case 'b':
-        robot.servo.move(0)
-        console.log('Servo in position 0')
+        this._robotservo.move(0);
+        console.log('Servo in position 0');
 
-        robot.board.wait(1000)
-        robot.servo.move(180)
-        console.log('Servo in position 180')
+        this._robotboard.wait(1000);
+        this._robotservo.move(180);
+        console.log('Servo in position 180');
 
-        robot.board.wait(1000)
-        robot.servo.move(90)
-        console.log('Servo in position 90')
+        this._robotboard.wait(1000);
+        this._robotservo.move(90);
+        console.log('Servo in position 90');
         break
       case 'exit':
       case 'z':
-        robot.close()
-        process.exit()
-        break
+        this._robotclose();
+        process.exit();
+        break;
       case 'ultrasonic distance':
       case 'u':
-        var res = robot.ultraSonicSensor.getDistance()
-        console.log('Ultrasonic Distance::' + res + ' cm')
+        var res = this._robotultraSonicSensor.getDistance();
+        console.log('Ultrasonic Distance::' + res + ' cm');
         break
       case 'ir receive':
-        var res = robot.IRReceiverSensor.read()
-        console.log('IR Receiver data::')
-        console.log(res)
-        break
+        var res = this._robotIRReceiverSensor.read();
+        console.log('IR Receiver data::');
+        console.log(res);
+        break;
       case 'l':
         // TODO
         break
       case 'move forward with pid':
       case 'i':
-        var res = robot.motion.forward(true)
-        console.log('Moving forward::' + res)
-        break
+        var res = this._robotmotion.forward(true);
+        console.log('Moving forward::' + res);
+        break;
       case 'move backward with pid':
       case 'k':
-        var res = robot.motion.backward(true)
-        console.log('Moving backward::' + res)
-        break
+        var res = this._robotmotion.backward(true);
+        console.log('Moving backward::' + res);
+        break;
       case 'rotate left':
       case 'n':
-        var res = robot.motion.leftWithRotation()
-        console.log('Rotating left::' + res)
-        break
+        var res = this._robotmotion.leftWithRotation();
+        console.log('Rotating left::' + res);
+        break;
       case 'rotate right':
       case 'm':
-        var res = robot.motion.rightWithRotation()
-        console.log('Rotating right::' + res)
-        break
+        var res = this._robotmotion.rightWithRotation();
+        console.log('Rotating right::' + res);
+        break;
       case 'set encoder targeting':
       case 'y':
-        var res = robot.encoders.targeting(1, 1, 18)
-        console.log('Setting encoder targeting:1:1:18::' + res)
-        break
+        var res = this._robotencoders.targeting(1, 1, 18);
+        console.log('Setting encoder targeting:1:1:18::' + res);
+        break;
       case 'firmware version':
       case 'f':
-        var res = robot.board.version()
-        console.log('Firmware version::' + res)
-        break
+        var res = this._robotboard.version()
+        console.log('Firmware version::' + res);
+        break;
       case 'board revision':
-        var res = robot.board.revision()
-        console.log('Board revision::' + res)
-        break
+        var res = this._robotboard.revision()
+        console.log('Board revision::' + res);
+        break;
     }
 
-    robot.board.wait(1000);
+    this._robotboard.wait(1000);
     this.askForCommand();
   }
-
-
-
-
-
 
 
   /**
