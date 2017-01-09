@@ -51,7 +51,7 @@
           if(!hasGP) $(window).trigger("gamepadconnected");
           window.clearInterval(checkGP);
         }
-      }, 500);
+      }, 50);
     }
 
   });
