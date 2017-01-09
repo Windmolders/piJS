@@ -46,7 +46,9 @@
     }
 
     if(gp.axes[0] != -1 && gp.axes[0] != 1 && gp.axes[1] != -1 && gp.axes[1] != 1 ) {
-    	sendStop();
+      if (_movementState != DIR_STOP) {
+    	  sendStop();
+      }
 		}
 
     $("#gamepadDisplay").html(html);
@@ -62,6 +64,8 @@
       initSocketEvents(socket);
 
       initKeyEvents();
+
+      initGamepad();
     });
   }
 
@@ -183,6 +187,7 @@
 	}
 
 	function sendStop() {
+	  _movementState = DIR_STOP;
     socket.emit('stop');
 	}
 
@@ -205,10 +210,7 @@
     }
 	}
 
-  if(canGame()) {
-
-    init();
-
+	function initGamepad() {
     var prompt = "To begin using your gamepad, connect it and press any button!";
     $("#gamepadPrompt").text(prompt);
 
@@ -233,6 +235,10 @@
         window.clearInterval(checkGP);
       }
     }, 500);
+  }
+
+  if(canGame()) {
+    init();
   }
 
 }());
