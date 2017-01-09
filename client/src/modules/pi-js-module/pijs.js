@@ -136,25 +136,25 @@ class piJS
         break
       case 'move forward':
       case 'w':
-        this._robot.setSpeed(255);
+        this._robot.motion.setSpeed(255);
         res = this._robot.motion.forward(false);
         console.log('Moving forward::' + res);
         break;
       case 'turn left':
       case 'a':
-        this._robot.setSpeed(128);
+        this._robot.motion.setSpeed(128);
         res = this._robot.motion.left();
         console.log('Turning left::' + res);
         break;
       case 'turn right':
       case 'd':
-        this._robot.setSpeed(128);
+        this._robot.motion.setSpeed(128);
         res = this._robot.motion.right();
         console.log('Turning right::' + res);
         break;
       case 'move backward':
       case 's':
-        this._robot.setSpeed(255);
+        this._robot.motion.setSpeed(255);
         res = this._robot.motion.backward(false);
         console.log('Moving backward::' + res);
         break;
