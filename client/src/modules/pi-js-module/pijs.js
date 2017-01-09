@@ -14,8 +14,8 @@ class piJS
     this._cfg = cfg;
 
     this.createRobot();
-    this.initRobot();
     this.listenEvents();
+    this.initRobot();
     this.sendReadyMessage();
   }
 
@@ -28,6 +28,7 @@ class piJS
 
   listenEvents() {
     this._robot.on('init', (res) => {
+      console.log('INIT DONE');
       this.onInit(res);
     });
     this._robot.on('error', (err) => {
