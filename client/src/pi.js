@@ -51,6 +51,9 @@ io.on('connection', function(socket) {
     pi.handleAnswer('turn left');
     socket.emit('left');
     console.info('left');
+    setTimeout(function () {
+      pi.handleAnswer('stop');
+    }, 100)
   });
 
   socket.on('right', function() {
@@ -61,6 +64,9 @@ io.on('connection', function(socket) {
     pi.handleAnswer('turn right');
     socket.emit('right');
     console.info('right');
+    setTimeout(function () {
+      pi.handleAnswer('stop');
+    }, 100)
   });
 
   socket.on('stop', function() {
