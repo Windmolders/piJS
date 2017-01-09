@@ -17,6 +17,7 @@ class piJS
     this.initRobot();
     this.listenEvents();
     this.sendReadyMessage();
+    this.askForCommand();
   }
 
   sendReadyMessage() {
@@ -67,7 +68,7 @@ class piJS
   }
 
   initRobot() {
-    this._robot.init()
+    this._robot.init();
   }
 
   askForCommand() {
