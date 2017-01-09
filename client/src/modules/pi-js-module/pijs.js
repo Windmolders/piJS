@@ -17,7 +17,6 @@ class piJS
     this.initRobot();
     this.listenEvents();
     this.sendReadyMessage();
-    this.askForCommand();
   }
 
   sendReadyMessage() {
@@ -246,10 +245,10 @@ class piJS
 
   onInit(res) {
     if (res) {
-      console.log('GoPiGo Ready!')
-      askForCommand()
+      console.log('GoPiGo Ready!');
+      this.askForCommand();
     } else {
-      console.log('Something went wrong during the init.')
+      console.log('Something went wrong during the init.');
     }
   }
 
