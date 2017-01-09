@@ -1,0 +1,45 @@
+{
+  "name": "piJS",
+  "version": "0.0.1",
+  "description": "Experimental car",
+  "homepage": "",
+  "author": {
+    "name": "eGo Frontend Team",
+    "email": "jonas_windmolders@hotmail.com",
+    "url": "https://www.tobania.be"
+  },
+  "files": [
+    "src"
+  ],
+  "main": "src/pi.js",
+  "keywords": [],
+  "scripts": {
+    "pi": "node ./src/pi.js"
+  },
+  "devDependencies": {
+    "eslint": "^3.1.1",
+    "eslint-config-xo-space": "^0.15.0",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^3.0.1",
+    "gulp-exclude-gitignore": "^1.0.0",
+    "gulp-line-ending-corrector": "^1.0.1",
+    "gulp-plumber": "^1.0.0",
+    "gulp-nsp": "^2.1.0"
+  },
+  "eslintConfig": {
+    "extends": "xo-space",
+    "env": {}
+  },
+  "repository": "git@github.com:Windmolders/piJS.git",
+  "license": "MIT",
+  "dependencies": {
+    "async": "1.*",
+    "buffertools": "2.1.*",
+    "events": "^1.1.1",
+    "i2c-bus": "1.*",
+    "lodash": "^4.17.2",
+    "node-gopigo": "^2.0.5",
+    "npmlog": "2.*",
+    "sleep": "3.*"
+  }
+}
