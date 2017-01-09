@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Robot controller</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <script type="text/javascript" src="socket.io.js"></script>
+    <script type="text/javascript" src="client.js"></script>
     <style>
         button.active {
             background: green;
@@ -18,6 +20,10 @@
 <br/>
 <input type="text" id="serverip"/>
 <button id="connect">connect</button>
+
+<div id="gamepadPrompt"></div>
+<div id="gamepadDisplay"></div>
+
 <script type="text/javascript" src="client.js"></script>
 </body>
 </html>
