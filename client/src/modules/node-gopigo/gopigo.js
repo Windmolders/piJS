@@ -153,7 +153,7 @@ GoPiGo.prototype.reset = function() {
   this.servo.move(Motion.directions.e)
   this.ledRight.off()
   this.ledLeft.off()
-  this.motion.setSpeed(64)
+  this.motion.setSpeed(128)
   this.free()
   this.emit('reset', true)
 }
