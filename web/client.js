@@ -89,11 +89,6 @@
     socket.emit('stop');
 	}
 
-	document.addEventListener('click', function (e) {
-		e.preventDefault();
-		sendForward();
-  });
-
   document.addEventListener('keydown', (event) => {
   	// Don't repeat
   	if (keyIsDown) {
