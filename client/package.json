@@ -40,6 +40,7 @@
     "lodash": "^4.17.2",
     "node-gopigo": "^2.0.5",
     "npmlog": "2.*",
-    "sleep": "3.*"
+    "sleep": "3.*",
+    "socket.io": "^1.7.2"
   }
 }
