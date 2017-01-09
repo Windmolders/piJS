@@ -71,8 +71,8 @@ class piJS
   }
 
   askForCommand() {
-    rl.question('What do you want me to do? > ', function (answer) {
-      handleAnswer(answer)
+    rl.question('What do you want me to do? > ', (answer) => {
+      this.handleAnswer(answer)
     })
   }
 
