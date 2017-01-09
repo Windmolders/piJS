@@ -2,6 +2,11 @@ var Gopigo = require('../node-gopigo');
 var Commands = Gopigo.commands;
 var Robot = Gopigo.robot;
 
+var rl = readline.createInterface({
+  input : process.stdin,
+  output: process.stdout
+});
+
 class piJS
 {
   /**
