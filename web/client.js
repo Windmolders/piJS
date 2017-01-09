@@ -11,9 +11,64 @@
 	var _movementState = DIR_STOP;
 
 	function init() {
-		socket = io.connect('http://localhost:9090');
-		initSocketEvents(socket);
+	  var savedIp = localStorage.getItem('ip');
+	  document.getElementById('serverip').value = savedIp;
+	  document.getElementById('connect').addEventListener('click', function() {
+      localStorage.setItem('ip', document.getElementById('serverip').value);
+		  socket = io.connect('http://' + document.getElementById('serverip').value);
+		  initSocketEvents(socket);
+
+		  initKeyEvents();
+    });
 	}
+
+	function initKeyEvents() {
+    document.addEventListener('keydown', (event) => {
+      // Don't repeat
+      if (keyIsDown) {
+        return;
+      }
+      const keyName = event.key;
+
+      keyIsDown = true;
+      console.log('KEYDOWN');
+      switch (keyName) {
+        case 'z':
+        case 'w':
+          sendForward();
+          break;
+        case 's':
+          sendBackward();
+          break;
+        case 'q':
+        case 'a':
+          sendLeft();
+          break;
+        case 'd':
+          sendRight();
+          break;
+        default:
+          sendStop();
+          break;
+      }
+    }, false);
+
+    document.addEventListener('keyup', (event) => {
+      // Don't repeat
+      if (!keyIsDown) {
+        return;
+      }
+      const keyName = event.key;
+
+      keyIsDown = false;
+      console.log('KEYUP');
+      switch (keyName) {
+        default:
+          sendStop();
+          break;
+      }
+    }, false);
+  }
 
 	function initSocketEvents(socket) {
 		socket.on('forward', function() {
@@ -88,52 +143,6 @@
 	function sendStop() {
     socket.emit('stop');
 	}
-
-  document.addEventListener('keydown', (event) => {
-  	// Don't repeat
-  	if (keyIsDown) {
-  		return;
-		}
-    const keyName = event.key;
-
-  	keyIsDown = true;
-console.log('KEYDOWN');
-    switch (keyName) {
-			case 'z':
-			case 'w':
-				sendForward();
-				break;
-			case 's':
-				sendBackward();
-				break;
-			case 'q':
-			case 'a':
-				sendLeft();
-				break;
-			case 'd':
-        sendRight();
-        break;
-			default:
-				sendStop();
-				break;
-		}
-  }, false);
-
-  document.addEventListener('keyup', (event) => {
-    // Don't repeat
-    if (!keyIsDown) {
-      return;
-    }
-    const keyName = event.key;
-
-    keyIsDown = false;
-    console.log('KEYUP');
-    switch (keyName) {
-      default:
-        sendStop();
-        break;
-    }
-  }, false);
 
   function updateMovementState() {
     document.querySelectorAll('button').forEach(function(btn){
