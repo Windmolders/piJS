@@ -47,7 +47,7 @@ io.on('connection', function(socket) {
   });
 
   socket.on('stop', function() {
-    pi.handleAnswer('move stop');
+    pi.handleAnswer('stop');
     socket.emit('stop');
     console.info('stop');
   });
