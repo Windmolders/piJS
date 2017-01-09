@@ -6,11 +6,17 @@
  */
 var fs      = require('fs');
 var _ = require('lodash');
-
 var Gopigo = require('./modules/node-gopigo');
 var Commands = Gopigo.commands;
 var Robot = Gopigo.robot;
 var readline = require('readline');
+
+
+var rl = readline.createInterface({
+  input : process.stdin,
+  output: process.stdout
+});
+
 
 /**
  * Load all internal dependencies
