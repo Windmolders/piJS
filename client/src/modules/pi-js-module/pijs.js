@@ -1,3 +1,6 @@
+var Gopigo = require('./modules/node-gopigo');
+var Commands = Gopigo.commands;
+var Robot = Gopigo.robot;
 
 class piJS
 {
