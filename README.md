@@ -55,3 +55,7 @@ Secondly , fill in the IP of the bot with port 9090 to connect to it. (This is a
 ```
 
 You can now use the buttons or QZSD (AWSD) or your game controller.
+
+
+
+![Control panel](http://i.imgur.com/zXDyNLt.png "πJS Control panel")
