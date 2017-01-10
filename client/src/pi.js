@@ -23,22 +23,22 @@ io.on('connection', function(socket) {
   var isDriving = false;
   console.info('socket connected. (' + socket.id + ')');
 
-  socket.on('forward', function() {
+  socket.on('forward', function(speed) {
     if (isDriving) {
       return;
     }
     isDriving = true;
-    pi.handleAnswer('move forward');
+    pi.handleAnswer('move forward', speed);
     socket.emit('forward');
     console.info('forward');
   });
 
-  socket.on('backward', function() {
+  socket.on('backward', function(speed) {
     if (isDriving) {
       return;
     }
     isDriving = true;
-    pi.handleAnswer('move backward');
+    pi.handleAnswer('move backward', speed);
     socket.emit('backward');
     console.info('backward');
   });

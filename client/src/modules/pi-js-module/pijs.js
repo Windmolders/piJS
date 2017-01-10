@@ -85,7 +85,7 @@ class piJS
 
   handleAnswer(answer, param) {
     let message = '';
-    let param = (typeof param === 'undefined') ? '80' : param;
+    let param = (typeof param === 'undefined') ? 80 : param;
     let res = null;
     switch (answer) {
       case 'help':
@@ -137,7 +137,10 @@ class piJS
         break
       case 'move forward':
       case 'w':
-        this._robot.motion.setSpeed(255);
+        if(param == 80) {
+          param = 255;
+        }
+        this._robot.motion.setSpeed(parseInt(param));
         res = this._robot.motion.forward(false);
         console.log('Moving forward::' + res);
         break;
@@ -155,7 +158,10 @@ class piJS
         break;
       case 'move backward':
       case 's':
-        this._robot.motion.setSpeed(255);
+        if(param == 80) {
+          param = 255;
+        }
+        this._robot.motion.setSpeed(parseInt(param));
         res = this._robot.motion.backward(false);
         console.log('Moving backward::' + res);
         break;
