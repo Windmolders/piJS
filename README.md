@@ -2,6 +2,8 @@
 
 Code run on a GoPiGo 2 (Raspberry PI 3) to run a car trough a website ( with optional controller support ).
 
+Project initially developed for an 24h code challenge hosted by [Tobania](https://www.tobania.be/)
+
 ## Authors
 
 * Benno Daenen
@@ -23,10 +25,12 @@ git clone https://github.com/Windmolders/piJS.git
 ```
 Install dependencies
 ```shell
-cd client && npm install
+cd client & npm install
 ```
 
 ## Running the instances
+
+From the root folder
 
 Run server
 
@@ -34,7 +38,7 @@ Run server
 node web/server.js
 ```
 
-Run pi client
+Run pi client (different process)
 
 ```shell
 node client/src/pi.js
