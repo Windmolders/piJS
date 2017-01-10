@@ -7,6 +7,8 @@
 	var DIR_STOP = 0;
 	var socket = null;
 	var keyIsDown = false;
+	var turnspeed = 64;
+	var speed = 255;
 
 	var _movementState = DIR_STOP;
 
@@ -61,6 +63,10 @@
     document.getElementById('connect').addEventListener('click', function() {
       localStorage.setItem('ip', document.getElementById('serverip').value);
       socket = io.connect('http://' + document.getElementById('serverip').value);
+
+      turnspeed = document.getElementById('turnspeed').value;
+      speed = document.getElementById('speed').value;
+
       initSocketEvents(socket);
 
       initKeyEvents();
@@ -255,19 +261,19 @@
 	}
 
 	function sendForward() {
-		socket.emit('forward');
+		socket.emit('forward', speed);
 	}
 
 	function sendBackward() {
-    socket.emit('backward');
+    socket.emit('backward', speed);
 	}
 
 	function sendLeft() {
-    socket.emit('left');
+    socket.emit('left', turnspeed);
 	}
 
 	function sendRight() {
-    socket.emit('right');
+    socket.emit('right', turnspeed);
 	}
 
 	function sendStop() {

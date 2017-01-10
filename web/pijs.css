@@ -1,11 +1,11 @@
 #left {
   position: absolute;
-  top: 50px;
+  top: 75px;
   left: 100px;
   width: 150px;
   height: 150px;
   border: 0;
-  background-color: #222222;
+  background-color: #eee;
   color: #fff;
   padding: 0;
   display: inline-block;
@@ -14,12 +14,12 @@
 
 #backward {
   position: absolute;
-  top: 225px;
+  top: 250px;
   left: 100px;
   width: 150px;
   height: 150px;
   border: 0;
-  background-color: #222222;
+  background-color: #eee;
   color: #fff;
   padding: 0;
   line-height: 150px;
@@ -28,12 +28,12 @@
 
 #forward {
   position: absolute;
-  top: 225px;
+  top: 250px;
   left: 275px;
   width: 150px;
   height: 150px;
   border: 0;
-  background-color: #222222;
+  background-color: #eee;
   color: #fff;
   padding: 0;
   line-height: 150px;
@@ -42,12 +42,12 @@
 
 #right {
   position: absolute;
-  top: 400px;
+  top: 425px;
   left: 100px;
   width: 150px;
   height: 150px;
   border: 0;
-  background-color: #222222;
+  background-color: #eee;
   padding: 0;
   line-height: 150px;
   display: inline-block;
@@ -82,10 +82,10 @@ button:active {
   color: #fff;
   border: 0;
   padding: 10px 20px;
-  margin-left: 100px;
+  margin-left: 10px;
 }
 
-#serverip {
+#serverip, #turnspeed, #speed{
   padding: 10px;
 }
 
@@ -93,4 +93,15 @@ i.material-icons {
   line-height: 150px;
   font-size: 100px;
   color: #fff;
+}
+
+.range {
+  position: absolute;
+  top: 600px;
+  left: 50px;
+}
+
+body {
+  background: #232323;
+  color: #eee;
 }

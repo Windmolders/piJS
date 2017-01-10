@@ -43,22 +43,22 @@ io.on('connection', function(socket) {
     console.info('backward');
   });
 
-  socket.on('left', function() {
+  socket.on('left', function(speed) {
     if (isDriving) {
       return;
     }
     isDriving = true;
-    pi.handleAnswer('turn left');
+    pi.handleAnswer('turn left', speed);
     socket.emit('left');
     console.info('left');
   });
 
-  socket.on('right', function() {
+  socket.on('right', function(speed) {
     if (isDriving) {
       return;
     }
     isDriving = true;
-    pi.handleAnswer('turn right');
+    pi.handleAnswer('turn right', speed);
     socket.emit('right');
     console.info('right');
   });
