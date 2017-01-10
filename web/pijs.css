@@ -1,0 +1,71 @@
+#left {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  width: 150px;
+  height: 150px;
+  border: 0;
+  background-color: #222222;
+  color: #fff;
+  padding: 0;
+  line-height: 150px;
+}
+
+#backward {
+  position: absolute;
+  top: 225px;
+  left: 100px;
+  width: 150px;
+  height: 150px;
+  border: 0;
+  background-color: #222222;
+  color: #fff;
+  padding: 0;
+  line-height: 150px;
+}
+
+#forward {
+  position: absolute;
+  top: 225px;
+  left: 275px;
+  width: 150px;
+  height: 150px;
+  border: 0;
+  background-color: #222222;
+  color: #fff;
+  padding: 0;
+  line-height: 150px;
+}
+
+#right {
+  position: absolute;
+  top: 400px;
+  left: 100px;
+  width: 150px;
+  height: 150px;
+  border: 0;
+  background-color: #222222;
+  padding: 0;
+  line-height: 150px;
+}
+
+button.active {
+  background-color: #01c0b1;
+}
+
+#connect {
+  background-color: #01c0b1;
+  color: #fff;
+  border: 0;
+  padding: 10px 20px;
+}
+
+#serverip {
+  padding: 10px;
+}
+
+i.material-icons {
+  line-height: 150px;
+  font-size: 100px;
+  color: #fff;
+}

@@ -2,26 +2,26 @@
 <html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <title>Robot controller</title>
+    <title>piJS Robot controller</title>
+    <meta name="viewport" content="width=500">
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <script type="text/javascript" src="socket.io.js"></script>
     <style>
-        button.active {
-            background: green;
-        }
+
     </style>
+    <link rel="stylesheet" href="pijs.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-<button id="forward">FORWARD</button>
-<button id="backward">BACKWARD</button>
-<button id="left">LEFT</button>
-<button id="right">RIGHT</button>
-<br/>
+<button id="forward"><i class="material-icons">&#xE5C8;</i></button>
+<button id="backward"><i class="material-icons">&#xE5C4;</i></button>
+<button id="left"><i class="material-icons">&#xE5D8;</i></button>
+<button id="right"><i class="material-icons">&#xE5DB;</i></button>
 <input type="text" id="serverip"/>
 <button id="connect">connect</button>
 
-<div id="gamepadPrompt"></div>
-<div id="gamepadDisplay"></div>
+<!--<div id="gamepadPrompt"></div>-->
+<!--<div id="gamepadDisplay"></div>-->
 
 <script type="text/javascript" src="client.js"></script>
 </body>
