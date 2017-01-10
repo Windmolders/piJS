@@ -8,6 +8,7 @@
   background-color: #222222;
   color: #fff;
   padding: 0;
+  display: inline-block;
   line-height: 150px;
 }
 
@@ -22,6 +23,7 @@
   color: #fff;
   padding: 0;
   line-height: 150px;
+  display: inline-block;
 }
 
 #forward {
@@ -35,6 +37,7 @@
   color: #fff;
   padding: 0;
   line-height: 150px;
+  display: inline-block;
 }
 
 #right {
@@ -47,6 +50,16 @@
   background-color: #222222;
   padding: 0;
   line-height: 150px;
+  display: inline-block;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:focus {
+  text-decoration: none;
+  background-color: #018e7f;
 }
 
 button.active {

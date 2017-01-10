@@ -117,6 +117,10 @@
     }, false);
 
     $('#forward').bind("touchstart", function(event) {
+
+
+      alert('test');
+
       // Don't repeat
       if (keyIsDown) {
         return;
@@ -257,7 +261,7 @@
 	}
 
   function updateMovementState() {
-    document.querySelectorAll('button').forEach(function(btn){
+    document.querySelectorAll('a').forEach(function(btn){
 			btn.className = '';
 		});
 
