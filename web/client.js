@@ -187,6 +187,13 @@
 
     });
 
+
+    $('#stop').on("mousedown", function(event) {
+      event.preventDefault();
+      keyIsDown = false;
+      sendStop();
+    });
+
     alert('events ready');
 
   }

@@ -77,6 +77,14 @@ button:active {
   padding: 10px 20px;
 }
 
+#stop {
+  background-color: red;
+  color: #fff;
+  border: 0;
+  padding: 10px 20px;
+  margin-left: 100px;
+}
+
 #serverip {
   padding: 10px;
 }
