@@ -15,25 +15,26 @@ Code run on a GoPiGo 2 (Raspberry PI 3) to run a car trough a website ( with opt
 * Git
 * WiFi (or a very long ethernet cable ;) ) -> You can use a hotspot instead of normal wifi to control the car.
 
-## Instalation
+## Installation
 
+Clone the project to a folder
 ```shell
 git clone https://github.com/Windmolders/piJS.git
 ```
-
+Install dependencies
 ```shell
-cd client && npm isntall
+cd client && npm install
 ```
 
 ## Running the instances
 
-### Run webserver
+Run server
 
 ```shell
 node web/server.js
 ```
 
-### Run pi client
+Run pi client
 
 ```shell
 node client/src/pi.js
