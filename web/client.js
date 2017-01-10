@@ -116,7 +116,7 @@
       }
     }, false);
 
-    $('#forward').bind("touchstart", ()=> {
+    $('#forward').bind("touchstart", function(event) {
       // Don't repeat
       if (keyIsDown) {
         return;
@@ -129,7 +129,7 @@
 
     }, false);
 
-    $('#backward').bind("touchstart", ()=> {
+    $('#backward').bind("touchstart", function(event) {
       // Don't repeat
       if (keyIsDown) {
         return;
@@ -142,7 +142,7 @@
 
     }, false);
 
-    $('#left').bind("touchstart", ()=> {
+    $('#left').bind("touchstart", function(event) {
       // Don't repeat
       if (keyIsDown) {
         return;
@@ -155,7 +155,7 @@
 
     }, false);
 
-    $('#right').bind("touchstart", ()=> {
+    $('#right').bind("touchstart", function(event) {
       // Don't repeat
       if (keyIsDown) {
         return;
@@ -168,14 +168,13 @@
 
     }, false);
 
-    $('#right, #backward, #left, #forward').bind('touchend', (event) => {
+    $('#right, #backward, #left, #forward').bind('touchend', function(event) {
       // Don't repeat
       if (!keyIsDown) {
         return;
       }
 
       keyIsDown = false;
-
 
       sendStop();
 
