@@ -122,6 +122,9 @@
 
       // Don't repeat
       if (keyIsDown) {
+        keyIsDown = false;
+
+        sendStop();
         return;
       }
 
@@ -136,6 +139,10 @@
       event.preventDefault();
       // Don't repeat
       if (keyIsDown) {
+
+        keyIsDown = false;
+
+        sendStop();
         return;
       }
 
@@ -150,6 +157,10 @@
       event.preventDefault();
       // Don't repeat
       if (keyIsDown) {
+
+        keyIsDown = false;
+
+        sendStop();
         return;
       }
 
@@ -164,6 +175,11 @@
       event.preventDefault();
       // Don't repeat
       if (keyIsDown) {
+
+        keyIsDown = false;
+
+        sendStop();
+
         return;
       }
 
@@ -171,19 +187,6 @@
 
 
       sendRight();
-
-    });
-
-    $('#right, #backward, #left, #forward').on('mouseup', function(event) {
-      event.preventDefault();
-      // Don't repeat
-      if (!keyIsDown) {
-        return;
-      }
-
-      keyIsDown = false;
-
-      sendStop();
 
     });
 
