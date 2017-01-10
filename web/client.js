@@ -116,10 +116,9 @@
       }
     }, false);
 
-    $('#forward').on("touchstart", function(event) {
+    $('#forward').on("mousedown", function(event) {
 
       event.preventDefault();
-      alert('test');
 
       // Don't repeat
       if (keyIsDown) {
@@ -133,7 +132,7 @@
 
     });
 
-    $('#backward').on("touchstart", function(event) {
+    $('#backward').on("mousedown", function(event) {
       event.preventDefault();
       // Don't repeat
       if (keyIsDown) {
@@ -147,7 +146,7 @@
 
     });
 
-    $('#left').on("touchstart", function(event) {
+    $('#left').on("mousedown", function(event) {
       event.preventDefault();
       // Don't repeat
       if (keyIsDown) {
@@ -161,7 +160,7 @@
 
     });
 
-    $('#right').on("touchstart", function(event) {
+    $('#right').on("mousedown", function(event) {
       event.preventDefault();
       // Don't repeat
       if (keyIsDown) {
@@ -175,7 +174,7 @@
 
     });
 
-    $('#right, #backward, #left, #forward').on('touchend', function(event) {
+    $('#right, #backward, #left, #forward').on('mouseup', function(event) {
       event.preventDefault();
       // Don't repeat
       if (!keyIsDown) {
