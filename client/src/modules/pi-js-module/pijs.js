@@ -142,13 +142,13 @@ class piJS
         break;
       case 'turn left':
       case 'a':
-        this._robot.motion.setSpeed(64);
+        this._robot.motion.setSpeed(100);
         res = this._robot.motion.left();
         console.log('Turning left::' + res);
         break;
       case 'turn right':
       case 'd':
-        this._robot.motion.setSpeed(64);
+        this._robot.motion.setSpeed(100);
         res = this._robot.motion.right();
         console.log('Turning right::' + res);
         break;
