@@ -56,7 +56,7 @@ Secondly , fill in the IP of the bot with port 9090 to connect to it. (This is a
 
 You can now use the buttons or QZSD (AWSD) or your game controller.
 
-Note: Control panel is build on on mobile site focus. No fancy graphics because of time challenge.
+Note: Control panel is build on a mobile site first focus. No fancy graphics because of time challenge.
 
 ![Control panel](http://i.imgur.com/zXDyNLt.png "πJS Control panel")
 
