@@ -118,7 +118,7 @@
 
     $('#forward').bind("touchstart", function(event) {
 
-
+      event.preventDefault();
       alert('test');
 
       // Don't repeat
@@ -134,6 +134,7 @@
     }, false);
 
     $('#backward').bind("touchstart", function(event) {
+      event.preventDefault();
       // Don't repeat
       if (keyIsDown) {
         return;
@@ -147,6 +148,7 @@
     }, false);
 
     $('#left').bind("touchstart", function(event) {
+      event.preventDefault();
       // Don't repeat
       if (keyIsDown) {
         return;
@@ -160,6 +162,7 @@
     }, false);
 
     $('#right').bind("touchstart", function(event) {
+      event.preventDefault();
       // Don't repeat
       if (keyIsDown) {
         return;
@@ -173,6 +176,7 @@
     }, false);
 
     $('#right, #backward, #left, #forward').bind('touchend', function(event) {
+      event.preventDefault();
       // Don't repeat
       if (!keyIsDown) {
         return;
