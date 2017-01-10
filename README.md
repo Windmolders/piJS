@@ -17,7 +17,7 @@ Code run on a GoPiGo 2 (Raspberry PI 3) to run a car trough a website ( with opt
 
 ## Installation
 
-Clone the project to a folder
+Clone the project to a folder on your PI
 ```shell
 git clone https://github.com/Windmolders/piJS.git
 ```
