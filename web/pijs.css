@@ -53,6 +53,10 @@ button.active {
   background-color: #01c0b1;
 }
 
+button:active {
+  background-color: #01c0b1;
+}
+
 #connect {
   background-color: #01c0b1;
   color: #fff;

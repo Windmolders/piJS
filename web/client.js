@@ -115,6 +115,72 @@
           break;
       }
     }, false);
+
+    $('#forward').bind("touchstart", ()=> {
+      // Don't repeat
+      if (keyIsDown) {
+        return;
+      }
+
+      keyIsDown = true;
+      console.log('KEYDOWN');
+
+      sendForward();
+
+    }, false);
+
+    $('#backward').bind("touchstart", ()=> {
+      // Don't repeat
+      if (keyIsDown) {
+        return;
+      }
+
+      keyIsDown = true;
+      console.log('KEYDOWN');
+
+      sendBackward();
+
+    }, false);
+
+    $('#left').bind("touchstart", ()=> {
+      // Don't repeat
+      if (keyIsDown) {
+        return;
+      }
+
+      keyIsDown = true;
+      console.log('KEYDOWN');
+
+      sendLeft();
+
+    }, false);
+
+    $('#right').bind("touchstart", ()=> {
+      // Don't repeat
+      if (keyIsDown) {
+        return;
+      }
+
+      keyIsDown = true;
+
+
+      sendRight();
+
+    }, false);
+
+    $('#right, #backward, #left, #forward').bind('touchend', (event) => {
+      // Don't repeat
+      if (!keyIsDown) {
+        return;
+      }
+
+      keyIsDown = false;
+
+
+      sendStop();
+
+    }, false);
+
   }
 	function initSocketEvents(socket) {
 		socket.on('forward', function() {
