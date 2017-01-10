@@ -85,7 +85,7 @@ class piJS
 
   handleAnswer(answer, param) {
     let message = '';
-    let param = (typeof param === 'undefined') ? 80 : param;
+    param = (typeof param === 'undefined') ? 80 : param;
     let res = null;
     switch (answer) {
       case 'help':
