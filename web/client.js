@@ -70,7 +70,7 @@
   }
 
 	function initKeyEvents() {
-    document.addEventListener('keydown', (event) => {
+    document.addEventListener('keydown', function(event) {
       // Don't repeat
       if (keyIsDown) {
         return;
@@ -100,7 +100,7 @@
       }
     }, false);
 
-    document.addEventListener('keyup', (event) => {
+    document.addEventListener('keyup', function(event) {
       // Don't repeat
       if (!keyIsDown) {
         return;
@@ -116,7 +116,7 @@
       }
     }, false);
 
-    $('#forward').bind("touchstart", function(event) {
+    $('#forward').on("touchstart", function(event) {
 
       event.preventDefault();
       alert('test');
@@ -131,9 +131,9 @@
 
       sendForward();
 
-    }, false);
+    });
 
-    $('#backward').bind("touchstart", function(event) {
+    $('#backward').on("touchstart", function(event) {
       event.preventDefault();
       // Don't repeat
       if (keyIsDown) {
@@ -145,9 +145,9 @@
 
       sendBackward();
 
-    }, false);
+    });
 
-    $('#left').bind("touchstart", function(event) {
+    $('#left').on("touchstart", function(event) {
       event.preventDefault();
       // Don't repeat
       if (keyIsDown) {
@@ -159,9 +159,9 @@
 
       sendLeft();
 
-    }, false);
+    });
 
-    $('#right').bind("touchstart", function(event) {
+    $('#right').on("touchstart", function(event) {
       event.preventDefault();
       // Don't repeat
       if (keyIsDown) {
@@ -173,9 +173,9 @@
 
       sendRight();
 
-    }, false);
+    });
 
-    $('#right, #backward, #left, #forward').bind('touchend', function(event) {
+    $('#right, #backward, #left, #forward').on('touchend', function(event) {
       event.preventDefault();
       // Don't repeat
       if (!keyIsDown) {
@@ -186,7 +186,9 @@
 
       sendStop();
 
-    }, false);
+    });
+
+    alert('events ready');
 
   }
 	function initSocketEvents(socket) {
@@ -265,7 +267,7 @@
 	}
 
   function updateMovementState() {
-    document.querySelectorAll('a').forEach(function(btn){
+    document.querySelectorAll('button').forEach(function(btn){
 			btn.className = '';
 		});
 
